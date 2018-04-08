@@ -12,12 +12,10 @@ before((done=>{
 }))
 
 beforeEach((done)=>{
-    const {users, comments, blogPosts} =    mongoose.connection.collections;
+    const {users, blogposts, comments} = mongoose.connection.collections;
     users.drop(()=>{
-        comments.drop(()=>{
-            blogPosts.drop(()=>{
-                done();
-            })
-        })
-    })
-})
+        blogposts.drop(()=>{
+            comments.drop(()=>done());
+        });
+    });    
+});

@@ -16,8 +16,7 @@ const UserSchema = new Schema({
     blogPosts:[{
         type:Schema.Types.ObjectId,
         ref:'blogPost'
-    }    
-    ]
+    }]
 });
 
 UserSchema.virtual('postCount').get(function(){
