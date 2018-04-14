@@ -22,6 +22,6 @@ let joe, blogPost;
         .then((count)=>{
             assert(count === 0);
             done();
-        })
-    })
-})
+        });
+    });
+});
